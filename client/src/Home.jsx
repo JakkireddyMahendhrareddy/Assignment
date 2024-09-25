@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
-  const [tasks, setTasks] = useState([]); // State to store tasks
-  const [taskInput, setTaskInput] = useState(''); // State for new task input
-  const [editIndex, setEditIndex] = useState(null); // State for keeping track of which task is being edited
-  const [editInput, setEditInput] = useState(''); // State for storing the value of the task being edited
+  const [tasks, setTasks] = useState([]); 
+  const [taskInput, setTaskInput] = useState(''); 
+  const [editIndex, setEditIndex] = useState(null);
+  const [editInput, setEditInput] = useState(''); 
 
-  // Add new task
+
   const addTask = (e) => {
     e.preventDefault();
     if (taskInput.trim() !== '') {
@@ -16,19 +16,19 @@ const Home = () => {
     }
   };
 
-  // Delete task
+  
   const deleteTask = (index) => {
     const newTasks = tasks.filter((task, i) => i !== index);
     setTasks(newTasks);
   };
 
-  // Set task for editing
+  
   const editTask = (index) => {
     setEditIndex(index);
     setEditInput(tasks[index]);
   };
 
-  // Save edited task
+
   const saveTask = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = editInput;
@@ -122,7 +122,7 @@ const Home = () => {
           </form>
         </div>
 
-        {/* Display the list of tasks */}
+      
         <div className="task-list">
           <h4>Your Tasks</h4>
           <ul className="list-group">
