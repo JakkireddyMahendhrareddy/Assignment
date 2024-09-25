@@ -5,18 +5,18 @@ import axios from 'axios';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault(); 
         axios.post('http://localhost:3001/login', { email, password })
             .then(result => {
                 console.log(result);
                 if(result.data==="Success"){
                   navigate('/home');
                 }
-                // Redirect to the home page upon successful login
-                 // Redirect to the home page
+                
+                
             })
             .catch(err => console.log(err));
     }
